@@ -3,17 +3,16 @@ import { Menu as MenuIcon } from "@styled-icons/material-outlined/Menu";
 
 import { useState } from "react";
 import { LogoLink, PropsLogoLink } from "../LogoLink";
-import { PropsMenuLink } from "../MenuLink";
-import { NavLinks } from "../NavLinks";
+import { NavLinks, PropsNavLinks } from "../NavLinks";
 import { SectionContainer } from "../SectionContainer";
 import * as Styled from "./styles";
 
 export type PropsMenu = {
-  links?: PropsMenuLink[];
+  links: PropsNavLinks[];
   logoData: PropsLogoLink;
 };
 
-export const Menu = ({ links = [], logoData }: PropsMenu) => {
+export const Menu = ({ links, logoData }: PropsMenu) => {
   const [visible, setVisible] = useState(false);
 
   return (

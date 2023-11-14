@@ -4,7 +4,7 @@ import * as Styled from "./styles";
 export type PropsNavLinks = {
   links: [
     {
-      children: React.ReactNode;
+      children: string;
       link: string;
       newTab: boolean;
     },

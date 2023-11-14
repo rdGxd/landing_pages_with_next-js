@@ -1,16 +1,18 @@
-import { Base } from ".";
+import { Base, PropsBase } from ".";
 import { mock } from "./mock";
 
-export default {
+const mockBase = {
   title: "Base",
   component: Base,
   args: mock,
 };
 
-export const Template = (args) => {
+export const Template = (args: PropsBase) => {
   return (
     <div>
       <Base {...args} />
     </div>
   );
 };
+
+export default mockBase;

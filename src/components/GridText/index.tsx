@@ -13,7 +13,7 @@ export type PropsGridText = {
       description: string;
     },
   ];
-  sectionId: string;
+  sectionId?: string;
 };
 
 export const GridText = ({ background = false, title, grid, description, sectionId = "" }: PropsGridText) => {
@@ -27,7 +27,7 @@ export const GridText = ({ background = false, title, grid, description, section
         <Styled.Grid>
           {grid.map((el) => (
             <Styled.GridElement key={el.title}>
-              <Heading size="medium" colorDark={!background} as="h3">
+              <Heading size="medium" colorDark={!background} as="h3" uppercase={false}>
                 {el.title}
               </Heading>
               <TextComponent>{el.description}</TextComponent>
