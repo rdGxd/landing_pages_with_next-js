@@ -1,7 +1,7 @@
 import { GridImage, PropsImageGrid } from ".";
 import { mock } from "./mock";
 
-export const storiesGridImage = {
+const storiesGridImage = {
   title: "GridImage",
   component: GridImage,
   args: mock,
@@ -14,3 +14,5 @@ export const Template = (args: PropsImageGrid) => {
     </div>
   );
 };
+
+export default storiesGridImage;

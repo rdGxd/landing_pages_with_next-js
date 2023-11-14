@@ -1,6 +1,6 @@
 import { GoTop } from ".";
 
-export const goTop = {
+const goTop = {
   title: "GoTop",
   component: GoTop,
   args: {
@@ -34,3 +34,5 @@ export const Template = () => {
     </div>
   );
 };
+
+export default goTop;

@@ -1,8 +1,8 @@
 import { GridText, PropsGridText } from ".";
 
-import { mock } from "./mock";
+import mock from "./mock";
 
-export const StoriesGridText = {
+const StoriesGridText = {
   title: "GridText",
   component: GridText,
   args: {
@@ -17,3 +17,5 @@ export const Template = (args: PropsGridText) => {
     </div>
   );
 };
+
+export default StoriesGridText;

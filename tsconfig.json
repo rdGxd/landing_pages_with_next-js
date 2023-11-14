@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/GridText/GridText.test.jsx", "src/components/Heading/styles.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/GridText/GridText.test.jsx", "src/components/Heading/styles.ts", "src/templates/Base/index.jsx"],
   "exclude": ["node_modules"]
 }

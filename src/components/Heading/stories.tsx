@@ -1,6 +1,6 @@
 import { Heading } from ".";
 
-export default {
+const StoriesHeading = {
   title: "Heading",
   component: Heading,
   args: {
@@ -37,3 +37,5 @@ Dark.args = {
   children: "O texto está claro",
   colorDark: false,
 };
+
+export default StoriesHeading;

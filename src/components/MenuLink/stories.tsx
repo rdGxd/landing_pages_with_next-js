@@ -1,6 +1,6 @@
-import { MenuLink } from ".";
+import { MenuLink, PropsMenuLink } from ".";
 
-export default {
+const StoriesMenuLink = {
   title: "MenuLink",
   component: MenuLink,
   args: {
@@ -15,10 +15,12 @@ export default {
   },
 };
 
-export const Template = (args) => {
+export const Template = (args: PropsMenuLink) => {
   return (
     <div style={{ display: "flex" }}>
       <MenuLink {...args} />
     </div>
   );
 };
+
+export default StoriesMenuLink;

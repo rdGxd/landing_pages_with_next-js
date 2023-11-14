@@ -1,6 +1,6 @@
-import { SectionContainer } from ".";
+import { PropsSectionContainer, SectionContainer } from ".";
 
-export default {
+const StoriesContainer = {
   title: "SectionContainer",
   component: SectionContainer,
   args: {
@@ -19,10 +19,12 @@ export default {
   },
 };
 
-export const Template = (args) => {
+export const Template = (args: PropsSectionContainer) => {
   return (
     <div>
       <SectionContainer {...args} />
     </div>
   );
 };
+
+export default StoriesContainer;

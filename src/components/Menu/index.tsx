@@ -1,22 +1,27 @@
 import { Close as CloseIcon } from "@styled-icons/material-outlined/Close";
 import { Menu as MenuIcon } from "@styled-icons/material-outlined/Menu";
 
-import P from "prop-types";
 import { useState } from "react";
-import { LogoLink } from "../LogoLink";
+import { LogoLink, PropsLogoLink } from "../LogoLink";
+import { PropsMenuLink } from "../MenuLink";
 import { NavLinks } from "../NavLinks";
 import { SectionContainer } from "../SectionContainer";
 import * as Styled from "./styles";
 
-export const Menu = ({ links = [], logoData }) => {
+export type PropsMenu = {
+  links?: PropsMenuLink[];
+  logoData: PropsLogoLink;
+};
+
+export const Menu = ({ links = [], logoData }: PropsMenu) => {
   const [visible, setVisible] = useState(false);
 
   return (
     <>
-      <Styled.Button $visible={visible} onClick={() => setVisible(true)} aria-label="Open/Close menu">
+      <Styled.Button visible={visible} onClick={() => setVisible(true)} aria-label="Open/Close menu">
         {visible ? <CloseIcon aria-label="Close menu" /> : <MenuIcon aria-label="Open menu" />}
       </Styled.Button>
-      <Styled.Container $visible={visible} onClick={() => setVisible(false)}>
+      <Styled.Container visible={visible} onClick={() => setVisible(false)}>
         <SectionContainer>
           <Styled.MenuContainer>
             <LogoLink {...logoData} />
@@ -26,9 +31,4 @@ export const Menu = ({ links = [], logoData }) => {
       </Styled.Container>
     </>
   );
-};
-
-Menu.propTypes = {
-  ...NavLinks.propTypes,
-  logoData: P.shape(LogoLink.propTypes).isRequired,
 };

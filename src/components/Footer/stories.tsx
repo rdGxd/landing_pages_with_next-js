@@ -1,6 +1,6 @@
 import { Footer, PropsFooter } from ".";
 
-export const footerStories = {
+const footerStories = {
   title: "Footer",
   component: Footer,
   args: {
@@ -15,3 +15,5 @@ export const Template = (args: PropsFooter) => {
     </div>
   );
 };
+
+export default footerStories;

@@ -1,8 +1,17 @@
-import P from "prop-types";
 import { MenuLink } from "../MenuLink";
 import * as Styled from "./styles";
 
-export const NavLinks = ({ links = [] }) => {
+export type PropsNavLinks = {
+  links: [
+    {
+      children: React.ReactNode;
+      link: string;
+      newTab: boolean;
+    },
+  ];
+};
+
+export const NavLinks = ({ links }: PropsNavLinks) => {
   return (
     <Styled.Container aria-label="Main menu">
       {links.map((link) => (
@@ -10,14 +19,4 @@ export const NavLinks = ({ links = [] }) => {
       ))}
     </Styled.Container>
   );
-};
-
-NavLinks.propTypes = {
-  links: P.arrayOf(
-    P.shape({
-      children: P.string.isRequired,
-      link: P.string.isRequired,
-      newTabe: P.bool,
-    }),
-  ),
 };

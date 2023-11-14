@@ -1,7 +1,7 @@
 import { GridTwoColumns, PropsGridTwoColumns } from ".";
 import { mock } from "./mock";
 
-export const StoriesGridTwoColumns = {
+const StoriesGridTwoColumns = {
   title: "GridTwoColum",
   component: GridTwoColumns,
   args: mock,
@@ -17,3 +17,5 @@ export const Template = (args: PropsGridTwoColumns) => {
     </div>
   );
 };
+
+export default StoriesGridTwoColumns;

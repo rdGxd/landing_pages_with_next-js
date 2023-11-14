@@ -1,7 +1,7 @@
-import { mock } from "./mock";
 import { GridContent, PropsGridContent } from ".";
+import { mock } from "./mock";
 
-export const storiesGridContent = {
+const storiesGridContent = {
   title: "GridContent",
   component: GridContent,
   args: {
@@ -16,3 +16,5 @@ export const Template = (args: PropsGridContent) => {
     </div>
   );
 };
+
+export default storiesGridContent;

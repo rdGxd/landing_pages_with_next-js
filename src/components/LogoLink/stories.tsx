@@ -1,6 +1,6 @@
-import { LogoLink } from ".";
+import { LogoLink, PropsLogoLink } from ".";
 
-export default {
+const LogoLinkStories = {
   title: "LogoLink",
   component: LogoLink,
   args: {
@@ -8,14 +8,9 @@ export default {
     srcImg: "assets/images/logo.svg",
     link: "https://google.com.br",
   },
-  // argTypes: {
-  //   text: { type: "string" },
-  //   srcImg: { type: "string" },
-  //   link: { type: "string" },
-  // },
 };
 
-export const ImageOnly = (args) => {
+export const ImageOnly = (args: PropsLogoLink) => {
   return (
     <div>
       <LogoLink {...args} />
@@ -23,7 +18,7 @@ export const ImageOnly = (args) => {
   );
 };
 
-export const TextOnly = (args) => {
+export const TextOnly = (args: PropsLogoLink) => {
   return (
     <div>
       <LogoLink {...args} />
@@ -34,3 +29,5 @@ export const TextOnly = (args) => {
 TextOnly.args = {
   srcImg: "",
 };
+
+export default LogoLinkStories;

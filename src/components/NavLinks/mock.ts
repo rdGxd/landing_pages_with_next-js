@@ -1,4 +1,6 @@
-export default [
+import { PropsMenuLink } from "../MenuLink";
+
+const testando = [
   {
     children: "Link 1",
     link: "#target1",
@@ -49,4 +51,6 @@ export default [
     link: "#target10",
     newTab: false,
   },
-];
+] as PropsMenuLink[];
+
+export default testando;

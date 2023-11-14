@@ -1,6 +1,6 @@
-import { SectionBackground } from ".";
+import { PropsSectionBackground, SectionBackground } from ".";
 
-export default {
+const StoriesBackground = {
   title: "SectionBackground",
   component: SectionBackground,
   args: {
@@ -21,10 +21,12 @@ export default {
   },
 };
 
-export const Template = (args) => {
+export const Template = (args: PropsSectionBackground) => {
   return (
     <div>
       <SectionBackground {...args} />
     </div>
   );
 };
+
+export default StoriesBackground;

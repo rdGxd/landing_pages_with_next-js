@@ -1,6 +1,6 @@
-import { TextComponent } from ".";
+import { PropsTextComponent, TextComponent } from ".";
 
-export default {
+const StoriesTextComponent = {
   title: "TextComponent",
   componente: TextComponent,
   args: {
@@ -14,10 +14,12 @@ export default {
   },
 };
 
-export const Template = (args) => {
+export const Template = (args: PropsTextComponent) => {
   return (
     <div>
       <TextComponent {...args} />
     </div>
   );
 };
+
+export default StoriesTextComponent;
