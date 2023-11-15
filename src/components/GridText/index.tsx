@@ -4,7 +4,6 @@ import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
 
 export type GridTextProps = {
-  background: boolean;
   title: string;
   description: string;
   grid: [
@@ -13,6 +12,7 @@ export type GridTextProps = {
       description: string;
     },
   ];
+  background?: boolean;
   sectionId?: string;
 };
 

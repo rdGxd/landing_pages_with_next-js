@@ -6,8 +6,14 @@ import * as Styled from "./styles";
 export type GridContentProps = {
   title: string;
   html: string;
-  background: boolean;
-  sectionId: string;
+  grid: [
+    {
+      alText: string;
+      srcImg: string;
+    },
+  ];
+  background?: boolean;
+  sectionId?: string;
 };
 
 export const GridContent = ({ title, html, background = false, sectionId = "" }: GridContentProps) => {

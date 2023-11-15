@@ -2,7 +2,7 @@ import { mapData } from "@/api/map-data";
 import Home, { PageData } from "@/templates/Home";
 
 type IndexProps = {
-  data?: PageData[];
+  data: PageData[];
 };
 
 export default function Index({ data }: IndexProps) {

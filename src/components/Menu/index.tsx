@@ -2,14 +2,14 @@ import { Close as CloseIcon } from "@styled-icons/material-outlined/Close";
 import { Menu as MenuIcon } from "@styled-icons/material-outlined/Menu";
 
 import { useState } from "react";
-import { LogoLink, PropsLogoLink } from "../LogoLink";
-import { NavLinks, PropsNavLinks } from "../NavLinks";
+import { LogoLink, LogoLinkProps } from "../LogoLink";
+import { NavLinks, NavLinksProps } from "../NavLinks";
 import { SectionContainer } from "../SectionContainer";
 import * as Styled from "./styles";
 
 export type PropsMenu = {
-  links: PropsNavLinks[];
-  logoData: PropsLogoLink;
+  links?: NavLinksProps[];
+  logoData: LogoLinkProps;
 };
 
 export const Menu = ({ links, logoData }: PropsMenu) => {

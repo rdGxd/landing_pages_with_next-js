@@ -4,6 +4,7 @@ import { GridText, GridTextProps } from "@/components/GridText/index.jsx";
 import { GridTwoColumns, GridTwoColumnsProps } from "@/components/GridTwoColumns/index.jsx";
 import { LogoLinkProps } from "@/components/LogoLink";
 import { MenuLinkProps } from "@/components/MenuLink";
+import Head from "next/head";
 import { Base } from "../Base";
 import { PageNotFound } from "../PageNotFound";
 
@@ -24,28 +25,35 @@ export type HomeProps = {
 };
 
 const Home = ({ data }: HomeProps) => {
-  if (!data) {
+  if (!data || !data.length) {
     return <PageNotFound />;
   }
 
-  const { menu, sections, footerHtml, slug } = data[0].attributes;
+  const { menu, sections, footerHtml, slug, title } = data[0].attributes;
   const { links, text, link, srcImg } = menu;
 
   return (
-    <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
-      {sections.map((section, index) => {
-        const { component } = section;
-        const key = `${slug}-${index}`;
+    <>
+      <Head>
+        <title>
+          `{title} | ${process.env.NEXT_PUBLIC_siteName}`
+        </title>
+      </Head>
+      <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
+        {sections.map((section, index) => {
+          const { component } = section;
+          const key = `${slug}-${index}`;
 
-        if (component === "section.section-two-columns") return <GridTwoColumns {...section} key={key} />;
+          if (component === "section.section-two-columns") return <GridTwoColumns {...section} key={key} />;
 
-        if (component === "section.section-content") return <GridContent {...section} key={key} />;
+          if (component === "section.section-content") return <GridContent {...section} key={key} />;
 
-        if (component === "section.section-grid-text") return <GridText {...section} key={key} />;
+          if (component === "section.section-grid-text") return <GridText {...section} key={key} />;
 
-        if (component === "section.section-grid-image") return <GridImage {...section} key={key} />;
-      })}
-    </Base>
+          if (component === "section.section-grid-image") return <GridImage {...section} key={key} />;
+        })}
+      </Base>
+    </>
   );
 };
 
