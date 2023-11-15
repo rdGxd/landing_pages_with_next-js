@@ -24,49 +24,11 @@ export type HomeProps = {
 };
 
 const Home = ({ data }: HomeProps) => {
-  // const [data, setResponse] = useState([]);
-
-  // useEffect(() => {
-  //   const pathname = location.pathname.replace(/[^A-Za-z0-9]/gi, "");
-  //   const slug = pathname ? pathname : `${process.env.NEXT_PUBLIC_defaultSlug}`;
-
-  //   const load = async () => {
-  //     try {
-  //       const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${slug}`);
-  //       const json = await data.json();
-  //       const pageData = mapData(json.data);
-  //       setResponse(pageData[0]);
-  //     } catch (error) {
-  //       setResponse(undefined);
-  //     }
-  //   };
-
-  //   load();
-  // }, [location.pathname]);
-
-  // useEffect(() => {
-  //   if (data === undefined) {
-  //     document.title = `Página não encontrada | ${process.env.NEXT_PUBLICsiteName}`;
-  //   }
-
-  //   if (data && !data.attributes.slug) {
-  //     document.title = `Carregando... |  ${process.env.NEXT_PUBLICsiteName} `;
-  //   }
-
-  //   if (data && data.attributes.title) {
-  //     document.title = `${data.attributes.title} |  ${process.env.NEXT_PUBLICsiteName}`;
-  //   }
-  // }, [data]);
-
   if (!data) {
     return <PageNotFound />;
   }
 
-  // if (data && !data.slug) {
-  //   return <Loading />;
-  // }
-
-  const { menu, sections, footerHtml, slug } = data;
+  const { menu, sections, footerHtml, slug } = data[0].attributes;
   const { links, text, link, srcImg } = menu;
 
   return (
