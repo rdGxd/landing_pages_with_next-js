@@ -1,7 +1,7 @@
 import { GridText } from ".";
 import { renderTheme } from "../../styles/render-theme";
 
-import { mock } from "./mock";
+import mock from "./mock";
 
 describe("<GridText />", () => {
   it("should render grid content", () => {

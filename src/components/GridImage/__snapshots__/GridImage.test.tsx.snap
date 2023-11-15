@@ -32,7 +32,7 @@ exports[`<GridImage /> should render with background undefined 1`] = `
 
 .c6 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
   gap: 3.2rem;
 }
 
@@ -178,7 +178,7 @@ exports[`<GridImage /> should render with images and content 1`] = `
 
 .c6 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
   gap: 3.2rem;
 }
 
