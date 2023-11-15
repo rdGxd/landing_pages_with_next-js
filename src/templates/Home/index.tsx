@@ -1,59 +1,72 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { mapData } from "@/api/map-data.js";
-import { GridContent } from "@/components/GridContent/index.jsx";
-import { GridImage } from "@/components/GridImage/index.jsx";
-import { GridText } from "@/components/GridText/index.jsx";
-import { GridTwoColumns } from "@/components/GridTwoColumns/index.jsx";
-import { Base } from "../Base/index.jsx";
-import { Loading } from "../Loading/index.jsx";
-import { PageNotFound } from "../PageNotFound/index.jsx";
+import { GridContent, GridContentProps } from "@/components/GridContent/index.jsx";
+import { GridImage, GridImageProps } from "@/components/GridImage/index.jsx";
+import { GridText, GridTextProps } from "@/components/GridText/index.jsx";
+import { GridTwoColumns, GridTwoColumnsProps } from "@/components/GridTwoColumns/index.jsx";
+import { LogoLinkProps } from "@/components/LogoLink";
+import { MenuLinkProps } from "@/components/MenuLink";
+import { Base } from "../Base";
+import { PageNotFound } from "../PageNotFound";
 
-const Home = () => {
-  const [response, setResponse] = useState([]);
-  const location = useLocation();
+export type PageData = {
+  attributes: {
+    title: string;
+    slug: string;
+    footerHtml: string;
+    menu: LogoLinkProps & { links: MenuLinkProps[] };
+    sections: SectionProps[];
+  };
+};
 
-  useEffect(() => {
-    const pathname = location.pathname.replace(/[^A-Za-z0-9]/gi, "");
-    const slug = pathname ? pathname : `${process.env.NEXT_PUBLIC_defaultSlug}`;
+export type SectionProps = GridImageProps | GridTextProps | GridTwoColumnsProps | GridContentProps;
 
-    const load = async () => {
-      try {
-        const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${slug}`);
-        const json = await data.json();
-        const pageData = mapData(json.data);
-        setResponse(pageData[0]);
-      } catch (error) {
-        setResponse(undefined);
-      }
-    };
+export type HomeProps = {
+  data: PageData[];
+};
 
-    load();
-  }, [location.pathname]);
+const Home = ({ data }: HomeProps) => {
+  // const [data, setResponse] = useState([]);
 
-  useEffect(() => {
-    if (response === undefined) {
-      document.title = `Página não encontrada | ${process.env.NEXT_PUBLICsiteName}`;
-    }
+  // useEffect(() => {
+  //   const pathname = location.pathname.replace(/[^A-Za-z0-9]/gi, "");
+  //   const slug = pathname ? pathname : `${process.env.NEXT_PUBLIC_defaultSlug}`;
 
-    if (response && !response.slug) {
-      document.title = `Carregando... |  ${process.env.NEXT_PUBLICsiteName} `;
-    }
+  //   const load = async () => {
+  //     try {
+  //       const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${slug}`);
+  //       const json = await data.json();
+  //       const pageData = mapData(json.data);
+  //       setResponse(pageData[0]);
+  //     } catch (error) {
+  //       setResponse(undefined);
+  //     }
+  //   };
 
-    if (response && response.title) {
-      document.title = `${response.title} |  ${process.env.NEXT_PUBLICsiteName}`;
-    }
-  }, [response]);
+  //   load();
+  // }, [location.pathname]);
 
-  if (response === undefined) {
+  // useEffect(() => {
+  //   if (data === undefined) {
+  //     document.title = `Página não encontrada | ${process.env.NEXT_PUBLICsiteName}`;
+  //   }
+
+  //   if (data && !data.attributes.slug) {
+  //     document.title = `Carregando... |  ${process.env.NEXT_PUBLICsiteName} `;
+  //   }
+
+  //   if (data && data.attributes.title) {
+  //     document.title = `${data.attributes.title} |  ${process.env.NEXT_PUBLICsiteName}`;
+  //   }
+  // }, [data]);
+
+  if (!data) {
     return <PageNotFound />;
   }
 
-  if (response && !response.slug) {
-    return <Loading />;
-  }
+  // if (data && !data.slug) {
+  //   return <Loading />;
+  // }
 
-  const { menu, sections, footerHtml, slug } = response;
+  const { menu, sections, footerHtml, slug } = data;
   const { links, text, link, srcImg } = menu;
 
   return (

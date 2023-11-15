@@ -1,5 +1,5 @@
-import { GridImage, PropsImageGrid } from ".";
-import { mock } from "./mock";
+import { GridImage, GridImageProps } from ".";
+import mock from "./mock";
 
 const storiesGridImage = {
   title: "GridImage",
@@ -7,7 +7,7 @@ const storiesGridImage = {
   args: mock,
 };
 
-export const Template = (args: PropsImageGrid) => {
+export const Template = (args: GridImageProps) => {
   return (
     <div>
       <GridImage {...args} />

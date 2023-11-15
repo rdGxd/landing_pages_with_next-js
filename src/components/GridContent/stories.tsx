@@ -1,4 +1,4 @@
-import { GridContent, PropsGridContent } from ".";
+import { GridContent, GridContentProps } from ".";
 import { mock } from "./mock";
 
 const storiesGridContent = {
@@ -9,7 +9,7 @@ const storiesGridContent = {
   },
 };
 
-export const Template = (args: PropsGridContent) => {
+export const Template = (args: GridContentProps) => {
   return (
     <div>
       <GridContent {...args} />

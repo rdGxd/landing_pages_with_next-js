@@ -1,4 +1,4 @@
-import { LogoLink, PropsLogoLink } from ".";
+import { LogoLink, LogoLinkProps } from ".";
 
 const LogoLinkStories = {
   title: "LogoLink",
@@ -10,7 +10,7 @@ const LogoLinkStories = {
   },
 };
 
-export const ImageOnly = (args: PropsLogoLink) => {
+export const ImageOnly = (args: LogoLinkProps) => {
   return (
     <div>
       <LogoLink {...args} />
@@ -18,7 +18,7 @@ export const ImageOnly = (args: PropsLogoLink) => {
   );
 };
 
-export const TextOnly = (args: PropsLogoLink) => {
+export const TextOnly = (args: LogoLinkProps) => {
   return (
     <div>
       <LogoLink {...args} />

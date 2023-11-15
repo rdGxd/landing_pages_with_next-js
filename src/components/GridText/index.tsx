@@ -3,7 +3,7 @@ import { SectionBackground } from "../SectionBackground";
 import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
 
-export type PropsGridText = {
+export type GridTextProps = {
   background: boolean;
   title: string;
   description: string;
@@ -16,7 +16,7 @@ export type PropsGridText = {
   sectionId?: string;
 };
 
-export const GridText = ({ background = false, title, grid, description, sectionId = "" }: PropsGridText) => {
+export const GridText = ({ background = false, title, grid, description, sectionId = "" }: GridTextProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>

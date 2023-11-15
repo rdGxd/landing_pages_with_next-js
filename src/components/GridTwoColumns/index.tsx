@@ -2,7 +2,8 @@ import { Heading } from "../Heading";
 import { SectionBackground } from "../SectionBackground";
 import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
-export type PropsGridTwoColumns = {
+
+export type GridTwoColumnsProps = {
   title: string;
   text: string;
   srcImg: string;
@@ -10,7 +11,7 @@ export type PropsGridTwoColumns = {
   sectionId: string;
 };
 
-export const GridTwoColumns = ({ title, text, srcImg, background = false, sectionId = "" }: PropsGridTwoColumns) => {
+export const GridTwoColumns = ({ title, text, srcImg, background = false, sectionId = "" }: GridTwoColumnsProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>

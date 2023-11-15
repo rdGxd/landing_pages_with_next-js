@@ -1,4 +1,4 @@
-import { MenuLink, PropsMenuLink } from ".";
+import { MenuLink, MenuLinkProps } from ".";
 
 const StoriesMenuLink = {
   title: "MenuLink",
@@ -15,7 +15,7 @@ const StoriesMenuLink = {
   },
 };
 
-export const Template = (args: PropsMenuLink) => {
+export const Template = (args: MenuLinkProps) => {
   return (
     <div style={{ display: "flex" }}>
       <MenuLink {...args} />
