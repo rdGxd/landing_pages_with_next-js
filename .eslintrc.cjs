@@ -19,5 +19,6 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/react-in-jsx-scope": "off",
+    "@next/next/no-img-element": "off",
   },
 };
