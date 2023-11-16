@@ -37,6 +37,10 @@ exports[`<GridTwoColumns /> should render two column grid 1`] = `
   margin-bottom: 4.0rem;
 }
 
+.c7 {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .c5 {
     font-size: 4.0rem;
@@ -86,7 +90,7 @@ exports[`<GridTwoColumns /> should render two column grid 1`] = `
         >
           <img
             alt="Grid two columns"
-            class=""
+            class="c7"
             src="assets/images/javascript.svg"
           />
         </div>
@@ -133,6 +137,10 @@ exports[`<GridTwoColumns /> should render two column grid 2`] = `
   margin-bottom: 4.0rem;
 }
 
+.c7 {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .c5 {
     font-size: 4.0rem;
@@ -182,7 +190,7 @@ exports[`<GridTwoColumns /> should render two column grid 2`] = `
         >
           <img
             alt="Grid two columns"
-            class=""
+            class="c7"
             src="assets/images/javascript.svg"
           />
         </div>
