@@ -1,4 +1,10 @@
-module.exports = {
+const nextJest = require("next/jest");
+
+const createJestConfig = nextJest({
+  dir: ".",
+});
+
+const customJestConfig = {
   coverageDirectory: "coverage",
   collectCoverage: true,
   collectCoverageFrom: [
@@ -19,3 +25,5 @@ module.exports = {
 
   setupFilesAfterEnv: ["<rootDir>/.jest/setup-tests.js"],
 };
+
+module.exports = createJestConfig(customJestConfig);

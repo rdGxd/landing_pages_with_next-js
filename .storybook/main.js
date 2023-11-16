@@ -2,6 +2,7 @@
 const config = {
   core: {
     builder: "@storybook/builder-webpack5",
+    disableTelemetry: true,
   },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../src/**/stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
