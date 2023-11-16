@@ -19,9 +19,7 @@ const Home = ({ data }) => {
   return (
     <>
       <Head>
-        <title>
-          {title} | {config.siteName}
-        </title>
+        <title>{`${title} | ${config.siteName}`}</title>
       </Head>
       <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
         {sections.map((section, index) => {
