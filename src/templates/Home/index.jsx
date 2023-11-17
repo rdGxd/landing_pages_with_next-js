@@ -6,13 +6,8 @@ import config from "@/config";
 import Head from "next/head";
 import P from "prop-types";
 import { Base } from "../Base";
-import { PageNotFound } from "../PageNotFound";
 
 const Home = ({ data }) => {
-  if (!data || !data.length) {
-    return <PageNotFound />;
-  }
-
   const { menu, sections, footerHtml, slug, title } = data[0];
   const { links, text, link, srcImg } = menu;
 
