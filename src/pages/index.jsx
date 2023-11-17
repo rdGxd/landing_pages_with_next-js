@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
   try {
     data = await loadPages("landing-page");
   } catch (error) {
-    //
+    data = null;
   }
 
   if (!data || !data.length) {
