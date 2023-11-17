@@ -1,5 +1,5 @@
 import { loadPages } from "@/api/load-pages";
-import { Home } from "@styled-icons/material-outlined";
+import Home from "@/templates/Home";
 import P from "prop-types";
 
 export default function Page({ data }) {
