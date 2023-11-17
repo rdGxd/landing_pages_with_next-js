@@ -9,7 +9,7 @@ export const LogoLink = ({ text, srcImg = "", link }) => {
   if (nextLink) {
     return (
       <Heading size="small" uppercase>
-        <Link href={link} passHref>
+        <Link href={link}>
           <Styled.Container>
             {!!srcImg && <img src={srcImg} alt={text} />}
             {!srcImg && text}

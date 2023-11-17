@@ -1,6 +1,7 @@
+import Link from "next/link";
 import styled, { css } from "styled-components";
 
-export const Container = styled.a`
+export const Container = styled(Link)`
   ${({ theme }) => css`
     display: inline-flex;
     text-decoration: none;
