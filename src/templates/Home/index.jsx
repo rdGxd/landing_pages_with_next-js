@@ -17,6 +17,7 @@ const Home = ({ data }) => {
         <meta name="theme-color" content="#0A1128" />
         <meta name="description" content="As landing pages mais legais da internet." />
       </Head>
+
       <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
         {sections.map((section, index) => {
           const { component } = section;
