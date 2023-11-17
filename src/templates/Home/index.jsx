@@ -6,7 +6,6 @@ import config from "@/config";
 import Head from "next/head";
 import P from "prop-types";
 import { Base } from "../Base";
-
 const Home = ({ data }) => {
   const { menu, sections, footerHtml, slug, title } = data[0];
   const { links, text, link, srcImg } = menu;
@@ -15,6 +14,8 @@ const Home = ({ data }) => {
     <>
       <Head>
         <title>{`${title} | ${config.siteName}`}</title>
+        <meta name="theme-color" content="#0A1128" />
+        <meta name="description" content="As landing pages mais legais da internet." />
       </Head>
       <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>
         {sections.map((section, index) => {
