@@ -1,9 +1,12 @@
-import P from "prop-types";
 import { SectionContainer } from "../SectionContainer";
 import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
 
-export const Footer = ({ html }) => {
+export type FooterProps = {
+  html: string;
+};
+
+export const Footer = ({ html }: FooterProps) => {
   return (
     <Styled.Container>
       <SectionContainer>
@@ -11,8 +14,4 @@ export const Footer = ({ html }) => {
       </SectionContainer>
     </Styled.Container>
   );
-};
-
-Footer.propTypes = {
-  html: P.string.isRequired,
 };
