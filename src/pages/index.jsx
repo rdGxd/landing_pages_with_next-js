@@ -6,7 +6,9 @@ export default function Index({ data = null }) {
   return <Home data={data} />;
 }
 
-export const getServerSideProps = async () => {
+// Apenas utilize getServerSideProps se você realmente nao puder colocar esse dados na pagina sem ter buscado na API
+
+export const getStaticProps = async () => {
   let data;
 
   try {
@@ -25,6 +27,7 @@ export const getServerSideProps = async () => {
     props: {
       data,
     },
+    revalidate: 10,
   };
 };
 
