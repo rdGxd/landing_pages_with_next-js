@@ -4,11 +4,13 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
     "plugin:@next/next/recommended",
   ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,7 +19,7 @@ module.exports = {
     sourceType: "module",
   },
   settings: { react: { version: "detect" } },
-  plugins: ["react"],
+  plugins: ["react", "@typescript-eslint"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "@next/next/no-img-element": "off",

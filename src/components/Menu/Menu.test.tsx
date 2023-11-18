@@ -1,9 +1,11 @@
+import "@testing-library/jest-dom";
 import { screen } from "@testing-library/react";
 import { Menu } from ".";
 import { renderTheme } from "../../styles/render-theme";
 
 import { fireEvent } from "@storybook/testing-library";
 import linksMocks from "../NavLinks/mock";
+
 const logoData = {
   text: "Logo",
   link: "#target",
