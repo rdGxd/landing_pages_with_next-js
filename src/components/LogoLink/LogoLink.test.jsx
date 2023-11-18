@@ -17,6 +17,18 @@ describe("<LogoLink />", () => {
     expect(img).toHaveAttribute("src", "image.jpg");
   });
 
+  it("should render internal link", () => {
+    renderTheme(<LogoLink link="/target" text="text" srcImg="image.jpg" />);
+    const img = screen.getByRole("img", { name: "text" });
+    expect(img).toBeInTheDocument();
+    expect(img).toHaveAttribute("src", "image.jpg");
+  });
+
+  it("should render render internal link with text only", () => {
+    renderTheme(<LogoLink link="/target" text="Olá mundo" />);
+    expect(screen.getByRole("heading", { name: "Olá mundo" })).toBeInTheDocument();
+  });
+
   it("should match snapshot", () => {
     const { container } = renderTheme(<LogoLink link="#target" text="text" srcImg="image.jpg" />);
 

@@ -1,7 +1,6 @@
-import Link from "next/link";
 import styled from "styled-components";
 
-export const Container = styled(Link)`
+export const Container = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
