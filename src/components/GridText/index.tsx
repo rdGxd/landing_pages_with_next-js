@@ -1,10 +1,22 @@
-import P from "prop-types";
 import { Heading } from "../Heading";
 import { SectionBackground } from "../SectionBackground";
 import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
 
-export const GridText = ({ background = false, title, grid, description, sectionId = "" }) => {
+export type GridTextProps = {
+  title: string;
+  description: string;
+  grid: [
+    {
+      title: string;
+      description: string;
+    },
+  ];
+  background?: boolean;
+  sectionId?: string;
+};
+
+export const GridText = ({ background = false, title, grid, description, sectionId = "" }: GridTextProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
@@ -25,12 +37,4 @@ export const GridText = ({ background = false, title, grid, description, section
       </Styled.Container>
     </SectionBackground>
   );
-};
-
-GridText.propTypes = {
-  title: P.string.isRequired,
-  description: P.string.isRequired,
-  grid: P.arrayOf(P.shape({ title: P.string.isRequired, description: P.string.isRequired })).isRequired,
-  background: P.bool,
-  sectionId: P.string,
 };

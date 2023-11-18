@@ -1,4 +1,5 @@
-import { LogoLink } from ".";
+import { Meta, StoryFn } from "@storybook/react";
+import { LogoLink, LogoLinkProps } from ".";
 
 export default {
   title: "LogoLink",
@@ -13,9 +14,9 @@ export default {
   //   srcImg: { type: "string" },
   //   link: { type: "string" },
   // },
-};
+} as Meta<typeof LogoLink>;
 
-export const ImageOnly = (args) => {
+export const ImageOnly: StoryFn<LogoLinkProps> = (args) => {
   return (
     <div>
       <LogoLink {...args} />
@@ -23,7 +24,7 @@ export const ImageOnly = (args) => {
   );
 };
 
-export const TextOnly = (args) => {
+export const TextOnly: StoryFn<LogoLinkProps> = (args) => {
   return (
     <div>
       <LogoLink {...args} />
