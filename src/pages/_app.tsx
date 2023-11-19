@@ -1,9 +1,9 @@
 import { GlobalStyles } from "@/styles/global-styles";
 import { theme } from "@/styles/theme";
-import P from "prop-types";
+import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -11,8 +11,3 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   );
 }
-
-App.propTypes = {
-  Component: P.elementType.isRequired,
-  pageProps: P.any,
-};

@@ -1,7 +1,12 @@
-import P from "prop-types";
 import * as Styled from "./styles";
 
-export const MenuLink = ({ children, link, newTab = false }) => {
+export type MenuLinkProps = {
+  children: React.ReactNode;
+  link: string;
+  newTab?: boolean;
+};
+
+export const MenuLink = ({ children, link, newTab = false }: MenuLinkProps) => {
   const target = newTab ? "_blank" : "_self";
   const nextLink = link.match(/.*\/.*/) ? true : false;
 
@@ -18,10 +23,4 @@ export const MenuLink = ({ children, link, newTab = false }) => {
       {children}
     </Styled.Container>
   );
-};
-
-MenuLink.propTypes = {
-  children: P.node.isRequired,
-  link: P.string.isRequired,
-  newTab: P.bool,
 };

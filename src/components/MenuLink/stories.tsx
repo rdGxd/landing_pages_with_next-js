@@ -1,4 +1,6 @@
-import { MenuLink } from ".";
+import { Meta, StoryFn } from "@storybook/react";
+import React from "react";
+import { MenuLink, MenuLinkProps } from ".";
 
 export default {
   title: "MenuLink",
@@ -8,14 +10,9 @@ export default {
     link: "https://google.com.br",
     newTab: false,
   },
-  argTypes: {
-    children: { type: "string" },
-    link: { type: "string" },
-    newTab: { type: "boolean" },
-  },
-};
+} as Meta<typeof MenuLink>;
 
-export const Template = (args) => {
+export const Template: StoryFn<MenuLinkProps> = (args) => {
   return (
     <div style={{ display: "flex" }}>
       <MenuLink {...args} />

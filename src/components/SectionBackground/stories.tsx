@@ -1,4 +1,5 @@
-import { SectionBackground } from ".";
+import { Meta, StoryFn } from "@storybook/react";
+import { SectionBackground, SectionBackgroundProps } from ".";
 
 export default {
   title: "SectionBackground",
@@ -15,13 +16,9 @@ export default {
     ),
     background: false,
   },
-  argTypes: {
-    children: { type: "" },
-    $background: { type: "boolean" },
-  },
-};
+} as Meta<typeof SectionBackground>;
 
-export const Template = (args) => {
+export const Template: StoryFn<SectionBackgroundProps> = (args) => {
   return (
     <div>
       <SectionBackground {...args} />

@@ -1,4 +1,5 @@
-import { Menu } from ".";
+import { Meta, StoryFn } from "@storybook/react";
+import { Menu, MenuProps } from ".";
 
 import linksMock from "../NavLinks/mock";
 
@@ -13,10 +14,9 @@ export default {
       srcImg: "",
     },
   },
-  argTypes: {},
-};
+} as Meta<typeof Menu>;
 
-export const Template = (args) => {
+export const Template: StoryFn<MenuProps> = (args) => {
   return (
     <div>
       <Menu {...args} />

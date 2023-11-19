@@ -1,18 +1,14 @@
 import { loadPages } from "@/api/load-pages";
-import Home from "@/templates/Home";
+import Home, { HomeProps } from "@/templates/Home";
 import { GetStaticProps } from "next";
 
-export type IndexProps = {
-  data: [];
-};
-
-export default function Index({ data = null }: IndexProps) {
+export default function Index({ data = null }: HomeProps) {
   return <Home data={data} />;
 }
 
 // Apenas utilize getServerSideProps se você realmente nao puder colocar esse dados na pagina sem ter buscado na API
 
-export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   let data = null;
 
   try {

@@ -2,13 +2,17 @@ import styled, { css } from "styled-components";
 import { Title as Heading } from "../Heading/styles";
 import { Container as SectionContainer } from "../SectionContainer/styles";
 
+type visible = {
+  visible?: boolean;
+};
+
 const menuVisible = () => css`
   visibility: visible;
   opacity: 1;
 `;
 
-export const Container = styled.header`
-  ${({ theme, $visible }) => css`
+export const Container = styled.header<visible>`
+  ${({ theme, visible }) => css`
     position: fixed;
     z-index: 5;
     top: 0;
@@ -33,7 +37,7 @@ export const Container = styled.header`
       height: 100vh;
       visibility: hidden;
       opacity: 0;
-      ${$visible && menuVisible()}
+      ${visible && menuVisible()}
 
       > ${SectionContainer} {
         display: grid;
@@ -68,8 +72,8 @@ export const MenuContainer = styled.div`
   `}
 `;
 
-export const Button = styled.button`
-  ${({ theme, $visible }) => css`
+export const Button = styled.button<visible>`
+  ${({ theme, visible }) => css`
     z-index: 6;
     position: fixed;
     top: 2rem;
@@ -80,7 +84,7 @@ export const Button = styled.button`
     color: ${theme.colors.white};
     border: none;
     display: none;
-    pointer-events: ${$visible ? "none" : "all"};
+    pointer-events: ${visible ? "none" : "all"};
 
     @media ${theme.media.lteMedium} {
       display: block;

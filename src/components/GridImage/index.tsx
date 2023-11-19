@@ -3,17 +3,18 @@ import { SectionBackground } from "../SectionBackground";
 import { TextComponent } from "../TextComponent";
 import * as Styled from "./styles";
 
+export type GridImageElementProps = {
+  altText: string;
+  srcImg: string;
+};
+
 export type GridImageProps = {
   background?: boolean;
   title: string;
   description: string;
-  grid: [
-    {
-      altText: string;
-      srcImg: string;
-    },
-  ];
+  grid: GridImageElementProps[];
   sectionId?: string;
+  component?: string;
 };
 
 export const GridImage = ({ title, description, grid, background = false, sectionId = "" }: GridImageProps) => {

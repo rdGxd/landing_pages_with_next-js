@@ -1,3 +1,5 @@
+import { GridContentProps } from ".";
+
 export default {
   title: "O titulo",
   html: `
@@ -24,4 +26,4 @@ export default {
 </BLOCKQUOTE>
 `,
   background: false,
-};
+} as GridContentProps;
