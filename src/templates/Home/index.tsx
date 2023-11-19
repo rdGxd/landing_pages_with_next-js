@@ -16,10 +16,6 @@ export type PageData = {
   sections: SectionProps[];
 };
 
-export type Attrs = {
-  attributes: PageData[];
-};
-
 export type SectionProps = GridContentProps | GridImageProps | GridTextProps | GridTwoColumnsProps;
 
 export type HomeProps = {
@@ -43,16 +39,21 @@ const Home = ({ data }: HomeProps) => {
           const { component } = section;
           const key = `${slug}-${index}`;
 
-          if (component === "section.section-two-columns")
+          if (component === "section.section-two-columns") {
             return <GridTwoColumns {...(section as GridTwoColumnsProps)} key={key} />;
+          }
 
-          if (component === "section.section-content")
+          if (component === "section.section-content") {
             return <GridContent {...(section as GridContentProps)} key={key} />;
+          }
 
-          if (component === "section.section-grid-text") return <GridText {...(section as GridTextProps)} key={key} />;
+          if (component === "section.section-grid-text") {
+            return <GridText {...(section as GridTextProps)} key={key} />;
+          }
 
-          if (component === "section.section-grid-image")
+          if (component === "section.section-grid-image") {
             return <GridImage {...(section as GridImageProps)} key={key} />;
+          }
         })}
       </Base>
     </>

@@ -16,14 +16,6 @@ export default function Page({ data }: HomeProps) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // const paths = (await loadPages()).map((page) => {
-  //   return {
-  //     params: {
-  //       slug: page.slug,
-  //     },
-  //   };
-  // });
-
   return {
     paths: [],
     fallback: true,

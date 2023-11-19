@@ -68,7 +68,7 @@
   "lint-staged": {
     "src/**/*": [
       "pnpm lint --fix",
-      "pnpm test -- --findRelatedTests --bail"
+      "pnpm test -- --findRelatedTests ./src/** --bail"
     ]
   }
 }

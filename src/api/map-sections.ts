@@ -105,6 +105,7 @@ export const mapImageGrid = (section = {} as any): GridImageProps => {
     sectionId,
     description,
     grid: grid[0].image.data.map((img: any): GridImageElementProps => {
+      console.log(grid);
       const { attributes: { url: srcImg = "", alternativeText: altText = "" } = "" } = img;
       return {
         srcImg,
