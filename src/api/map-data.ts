@@ -4,7 +4,7 @@ import { mapMenu } from "./map-menu";
 import { mapSections } from "./map-sections";
 
 export const mapData = (pagesData = [{}] as any): PageData[] => {
-  return pagesData.map(({ attributes }: PageData) => {
+  return pagesData.map(({ attributes }) => {
     const { footerHtml = "", slug = "", title = "", sections = [], menu = {} } = attributes;
 
     return {

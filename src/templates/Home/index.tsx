@@ -16,6 +16,10 @@ export type PageData = {
   sections: SectionProps[];
 };
 
+export type Attrs = {
+  attributes: PageData[];
+};
+
 export type SectionProps = GridContentProps | GridImageProps | GridTextProps | GridTwoColumnsProps;
 
 export type HomeProps = {

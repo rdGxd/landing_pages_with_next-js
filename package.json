@@ -11,7 +11,8 @@
     "test": "jest",
     "lint": "eslint src --max-warnings=0",
     "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clear_jest": "jest --clearCache"
   },
   "dependencies": {
     "@styled-icons/material-outlined": "^10.47.0",
