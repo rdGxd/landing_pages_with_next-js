@@ -5,7 +5,7 @@ export default {
   title: "Footer",
   component: Footer,
   args: {
-    html: "<p><a href='https://beacons.page/otaviomiranda'>Feito por Rodrigo Silva</a></p>",
+    html: "<p><a href='https://google.com.br'>Feito por Rodrigo Silva</a></p>",
   },
 } as Meta<typeof Footer>;
 
